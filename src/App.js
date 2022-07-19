@@ -3,9 +3,10 @@ import Movies from './components/fetchApi';
 
 function App() {
 
+ 
   return (
     <div className="App">
-        <Movies/>
+      <Movies/> 
     </div>
   );
 }
