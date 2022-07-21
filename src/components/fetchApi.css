@@ -1,0 +1,24 @@
+h2{
+    margin: 3% 0 0 0;
+    font-size: 35px;
+}
+
+
+.movie{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.poster-name{
+    margin: 6% 3% 0 3%;
+    width: 400px;
+    padding-bottom: 30px;
+}
+
+@media only screen and (min-width: 1000px) {
+    .poster-name{
+        margin: 2% 3% 0 3%;
+    }
+}

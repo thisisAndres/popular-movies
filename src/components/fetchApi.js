@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react"
-
+import "./fetchApi.css"
 
 const Movies = () =>{
     //variables and constants
 
-    const [movies, setMovies] =useState({movieName: [], movieImgPath:[]})
-
-    const imgURL = "https://image.tmdb.org/t/p/w200"
+    const [movies, setMovies] =useState([])
+    const imgURL = "https://image.tmdb.org/t/p/w300"
     const KEY = "fae07e181e6c52b98620429577af7c26"
     const URL = "https://api.themoviedb.org/3/trending/movie/day?api_key="
 
@@ -20,17 +19,22 @@ const Movies = () =>{
             .then(response => response.json())
             .then(data => {
                     const results = data.results;
-                    const newResults = results.map(element => {return element.title});
-                    const imagesPaths = results.map(element => {return element.poster_path})
-                    setMovies({movieName:newResults, movieImgPath:imagesPaths})
+                    setMovies(results);
             })
     }
 
 
 
     return (
-        <div>
-            {movies.movieImgPath.map( (img, key) => {return <img alt="movie" key={key} src={imgURL+img}/>})}
+        <div className="movie">
+            {movies.map((movie, key) =>{
+                return(
+                    <div className="poster-name" key={key}>
+                        <img alt="poster" src={imgURL+movie.poster_path}/>
+                        <h2>{movie.title}</h2>
+                    </div>
+                )
+            })}
         </div>
     );
 }

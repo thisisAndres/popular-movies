@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+}
+
+p{
+    background-color: #2f2e2a;
+    color: #adaeac;
+    padding: 30px 0;
+    font-size: 20px;
+}
